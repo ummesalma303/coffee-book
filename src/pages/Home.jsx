@@ -9,7 +9,6 @@ const Home = () => {
     return (
         <div className='mx-w-7xl mx-auto'>
            <Banner></Banner>
-           {/* <Heading></Heading> */}
             <Heading title={'Browse Coffees by Category'} subTitle={'Choose your desired coffee category to browse through specific coffees that fit in your taste.'}></Heading>
 
             <Categories categories={categories}></Categories>

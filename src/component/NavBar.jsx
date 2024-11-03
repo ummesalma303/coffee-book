@@ -9,7 +9,7 @@ const NavBar = () => {
 
     </>
     return (
-       <div className=' w-full backdrop-blur-md bg-white/45 sticky top-0'>
+       <div className=' w-full backdrop-blur-md bg-white/45 sticky top-0 z-20'>
          <div className="navbar w-[90%] mx-auto ">
   <div className="navbar-start">
     <div className="dropdown">
