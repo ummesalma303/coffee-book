@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Card = ({ coffee }) => {
     // console.log(coffee)
-    const { name, image, category, type, origin, popularity, rating } = coffee;
-    // const handleRatting = () => {
-    //     coffee.sort((a,b)=>a.rating-b.rating)
-    // }
+    const { name, image, category, type, origin, popularity, rating ,id} = coffee;
+    
     return (
         <div>
-           <div className="card card-compact bg-base-100 shadow-xl">
+            <Link to={`/coffeeDetails/${id}`}>
+            <div className="card card-compact bg-base-100 shadow-xl">
   <figure>
     <img className='aspect-video' src={image} alt={name} />
   </figure>
@@ -21,7 +21,8 @@ const Card = ({ coffee }) => {
                     <h3 className='text-lg'>Popularity: {popularity}</h3>
                     <h3 className='text-lg'>Ratting: { rating}</h3>
   </div>
-</div>
+           </div>
+            </Link>
         </div>
     );
 };

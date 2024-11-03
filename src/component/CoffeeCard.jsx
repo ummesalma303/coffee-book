@@ -23,7 +23,7 @@ const CoffeeCard = () => {
         setCoffee(showData)
     },[])
     
-    console.log(coffees)
+    // console.log(coffees)
     return (
         <div className='grid grid-cols-1 md:grid-cols-3 w-[90%] mx-auto gap-10 justify-items-center'>
             {
