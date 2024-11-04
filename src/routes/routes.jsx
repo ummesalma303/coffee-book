@@ -43,7 +43,9 @@ const router = createBrowserRouter([
         },
         {
             path:'/dashBoard',
-            element: <DashBoard></DashBoard>
+            element: <DashBoard></DashBoard>,
+            loader:()=> fetch('../data/coffees.json')
+
         }
       ]
       
