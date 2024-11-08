@@ -1,19 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { setAllFavorite } from '../utility';
 
 const CoffeeDetails = () => {
     const { id } = useParams()
     const allData = useLoaderData();
-    const [coffee, setCoffee] = useState({})
+    const [coffee, setCoffee] = useState({});
+    const [isFavorite, setFavorite]= useState(false)
     useEffect(()=>{
     const filterData = allData.find(coffee => coffee.id === parseInt(id))
     setCoffee(filterData)
-
     },[])
     const {
         name,image,ingredients,nutrition_info,description,making_process,rating,popularity,
       } = coffee;
-    console.log(coffee);
+   
+
+
+      const handleFavorite=(id)=>{
+        setAllFavorite(id);
+        // isFavorite?
+      }
+
+      
     return (
         <div>
            <div className="card card-compact bg-base-100 shadow-xl w-[90%] mx-auto my-12">
@@ -27,7 +36,7 @@ const CoffeeDetails = () => {
                     <h3 className='text-lg'>Popularity: {popularity}</h3>
                     <h3 className='text-lg'>Ratting: { rating}</h3> <br />
                         </div>
-                        <button className='btn btn-warning'>Add Favorite</button>
+                        <button disabled={isFavorite} onClick={()=>handleFavorite(id)} className='btn btn-warning'>Add Favorite</button>
                     </div>
 
                     <h2 className="card-title text-3xl font-normal">Making Process:</h2>

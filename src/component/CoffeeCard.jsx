@@ -25,12 +25,15 @@ const CoffeeCard = () => {
     
     // console.log(coffees)
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3 w-[90%] mx-auto gap-10 justify-items-center'>
+       <div>
+         <div className=' grid grid-cols-1 md:grid-cols-3 w-[90%] mx-auto gap-10 justify-items-center'>
             {
                 coffees.map(coffee=><Card key={coffee.id} coffee={coffee}></Card>)
             }
-            <button onClick={()=>navigate('/coffees')} className='btn btn-warning mb-12'>View All</button>
         </div>
+        <button onClick={()=>navigate('/coffees')} className='btn btn-warning mb-12'>View All</button>
+
+       </div>
     );
 };
 
